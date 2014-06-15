@@ -1,0 +1,10 @@
+/usr/local/var/rbenv/versions/2.1.1/bin/ruby extconf.rb 
+
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+make "DESTDIR="
+:
+
+make "DESTDIR=" install
+:

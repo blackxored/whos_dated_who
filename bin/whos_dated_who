@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require 'bundler'
+Bundler.setup
+require 'whos_dated_who/cli'
+
+WhosDatedWho::CLI.start(ARGV)
