@@ -1,5 +1,7 @@
 # WhosDatedWho
 
+[![Gem Version](https://badge.fury.io/rb/whos_dated_who.png)](http://badge.fury.io/rb/whos_dated_who) [![Build Status](https://travis-ci.org/blackxored/whos_dated_who.png)](https://travis-ci.org/blackxored/whos_dated_who) [![Coverage Status](https://coveralls.io/repos/blackxored/whos_dated_who/badge.png?branch=master)](https://coveralls.io/r/blackxored/whos_dated_who) [![Dependency Status](https://gemnasium.com/blackxored/whos_dated_who.png)](https://gemnasium.com/blackxored/whos_dated_who) [![Code Climate](https://codeclimate.com/github/blackxored/whos_dated_who.png)](https://codeclimate.com/github/blackxored/whos_dated_who)
+
 Unofficial API for http://whosdatedwho.com
 
 ## Installation
