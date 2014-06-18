@@ -47,9 +47,10 @@ module WhosDatedWho
       result[:status] = :married if relationship[:human] =~ /married/
       result[:status] = :engaged if relationship[:human] =~ /engaged/
       result[:status] = :rumored if relationship[:human] =~ /rumored/
+      result[:status] = :single  if relationship[:human] =~ /single/
       relationship
     end
-    
+
     def extract_past_relationships
     end
 
