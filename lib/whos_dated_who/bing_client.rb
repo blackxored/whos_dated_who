@@ -1,7 +1,8 @@
 require 'yaml'
 module WhosDatedWho
   class BingClient
-    API_KEY = YAML.load_file( File.expand_path('~/.whos_dated_who.yml'))[:bing_api_key]
+    API_KEY = ENV['BING_API_KEY'] ||
+      YAML.load_file( File.expand_path('~/.whos_dated_who.yml'))[:bing_api_key]
 
     def initialize(api_key=API_KEY)
       @api_key = api_key
