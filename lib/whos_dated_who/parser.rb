@@ -47,6 +47,7 @@ module WhosDatedWho
       result[:status] = :married if relationship[:human] =~ /married/
       result[:status] = :engaged if relationship[:human] =~ /engaged/
       result[:status] = :rumored if relationship[:human] =~ /rumored/
+      result[:status] = :dating  if relationship[:human] =~ /dating/
       result[:status] = :single  if relationship[:human] =~ /single/
       relationship
     end
