@@ -16,7 +16,7 @@ module WhosDatedWho
 
     private
     def extract_bio
-      bio = @doc.css('#rcol > div.right-content > div:nth-child(3)')
+      bio = @doc.css('.contentbox-r:nth-child(2)')
       result = {}
       bio.css('.posl, .posr').each do |el|
         if el.matches?('.posl')
@@ -26,7 +26,6 @@ module WhosDatedWho
           if el.css('div').size > 0
             result[key] = [] unless result[key]
             result[key] = el.children.map(&:content).reject do |c|
-              # Empty of leftover with parentheses
               c.empty? || c =~ /^\s\(/
             end
           else

@@ -24,15 +24,15 @@ module WhosDatedWho
         expect(@result.age).to eq(29)
         expect(@result.born_on).to be_kind_of(Date)
       end
-      
+
       it "ignores irrelevant keys" do
         expect(@result).to_not have_key("snapshot")
       end
 
       it "populates arrays" do
         [
-          :other_names, :brand_endorsements, :websites, :brothers, :sisters, 
-          :friends, :pets, :favorite_movies, :favorite_places, :favorite_foods, 
+          :other_names, :brand_endorsements, :websites, :brothers, :sisters,
+          :friends, :pets, :favorite_movies, :favorite_places, :favorite_foods,
           :favorite_colors, :favorite_accessories
         ].each do |key|
           expect(@result[key]).to be_kind_of(Array)
