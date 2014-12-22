@@ -16,7 +16,7 @@ module WhosDatedWho
 
     private
     def extract_bio
-      bio = @doc.css('.contentbox-r:nth-child(2)')
+      bio = @doc.css('.contentbox-r:nth-child(3)')
       result = {}
       bio.css('.posl, .posr').each do |el|
         if el.matches?('.posl')
