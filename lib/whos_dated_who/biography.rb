@@ -8,6 +8,7 @@ class Biography < Hashie::Trash
   property :first_name
   property :middle_name
   property :last_name
+  property :maiden_name
   property :full_name_at_birth
   property :other_names # array
   property :age, transform_with: ->(i) { i.to_i }

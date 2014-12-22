@@ -12,7 +12,8 @@ module WhosDatedWho
     context "biography" do
       it "parses the HTML and returns a result hash" do
         expect(@result.first_name).to eq("Scarlett")
-        expect(@result.last_name).to eq("Johansson")
+        expect(@result.last_name).to eq("Dauriac")
+        expect(@result.maiden_name).to eq("Johansson")
       end
 
       it "translates keys" do
@@ -21,7 +22,7 @@ module WhosDatedWho
       end
 
       it "coerces result values" do
-        expect(@result.age).to eq(29)
+        expect(@result.age).to eq(30)
         expect(@result.born_on).to be_kind_of(Date)
       end
 
