@@ -17,6 +17,10 @@ module WhosDatedWho
     private
     def extract_bio
       bio = @doc.css('.contentbox-r:nth-child(2)')
+      # Check if is the annoying needs a banner thingy
+      if bio.css('.anu').length > 0
+        bio = @doc.css('.contentbox-r:nth-child(3)')
+      end
       result = {}
       bio.css('.posl, .posr').each do |el|
         if el.matches?('.posl')
