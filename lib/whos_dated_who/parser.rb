@@ -33,7 +33,12 @@ module WhosDatedWho
               c.empty? || c =~ /^\s\(/
             end
           else
-            result[key] = el.content.rstrip
+            value = el.content.rstrip
+            if respond_to?("parse_#{key}".to_sym, true)
+              result[key] = send("parse_#{key}", value)
+            else
+              result[key] = value
+            end
           end
         end
       end
@@ -60,6 +65,14 @@ module WhosDatedWho
 
     def normalize_bio_key(key)
       key.gsub(/\s/, '_').gsub(/[()]/, '').downcase
+    end
+
+    def parse_height(value)
+      ($1.to_i / 100.0) if value =~ /(\d+) cm.*$/
+    end
+
+    def parse_weight(value)
+      $1.to_f if value =~ /\((.+) kg/
     end
   end
 end

@@ -30,6 +30,14 @@ module WhosDatedWho
         expect(@result).to_not have_key("snapshot")
       end
 
+      it "parses height" do
+        expect(@result.height).to eq(1.60)
+      end
+
+      it "parses weight" do
+        expect(@result.weight).to eq(56.7)
+      end
+
       it "populates arrays" do
         [
           :other_names, :brand_endorsements, :websites, :brothers, :sisters,
