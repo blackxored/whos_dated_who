@@ -1,6 +1,7 @@
 require 'coveralls'
 Coveralls.wear!
 
+require 'pry'
 require 'whos_dated_who'
 
 RSpec.configure do |config|
