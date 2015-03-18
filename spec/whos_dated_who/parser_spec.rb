@@ -57,6 +57,10 @@ module WhosDatedWho
         expect(@result.favorite_movies).to include(/Heat/)
         expect(@result.favorite_places).to include('London')
       end
+
+      it "gets a description" do
+        expect(@result.description).to match(/American actress, model, and singer/)
+      end
     end
   end
 end

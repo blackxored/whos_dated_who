@@ -16,6 +16,7 @@ class Biography < Hashie::Trash
   property :born_at, from: :birthplace
   property :height
   property :weight
+  property :description
   property :build
   property :eye_color
   property :hair_color
