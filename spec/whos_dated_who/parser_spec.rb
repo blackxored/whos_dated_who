@@ -9,36 +9,36 @@ module WhosDatedWho
       @result = parser.result.biography
     end
 
-    context "biography" do
-      it "parses the HTML and returns a result hash" do
-        expect(@result.first_name).to eq("Scarlett")
-        expect(@result.last_name).to eq("Dauriac")
-        expect(@result.maiden_name).to eq("Johansson")
+    context 'biography' do
+      it 'parses the HTML and returns a result hash' do
+        expect(@result.first_name).to eq('Scarlett')
+        expect(@result.last_name).to eq('Dauriac')
+        expect(@result.maiden_name).to eq('Johansson')
       end
 
-      it "translates keys" do
+      it 'translates keys' do
         expect(@result.born_at).to be_truthy
         expect(@result.born_on).to be_truthy
       end
 
-      it "coerces result values" do
+      it 'coerces result values' do
         expect(@result.age).to eq(30)
         expect(@result.born_on).to be_kind_of(Date)
       end
 
-      it "ignores irrelevant keys" do
-        expect(@result).to_not have_key("snapshot")
+      it 'ignores irrelevant keys' do
+        expect(@result).to_not have_key('snapshot')
       end
 
-      it "parses height" do
+      it 'parses height' do
         expect(@result.height).to eq(1.60)
       end
 
-      it "parses weight" do
+      it 'parses weight' do
         expect(@result.weight).to eq(56.7)
       end
 
-      it "populates arrays" do
+      it 'populates arrays' do
         [
           :other_names, :brand_endorsements, :websites, :brothers, :sisters,
           :friends, :pets, :favorite_movies, :favorite_places, :favorite_foods,
@@ -58,7 +58,7 @@ module WhosDatedWho
         expect(@result.favorite_places).to include('London')
       end
 
-      it "gets a description" do
+      it 'gets a description' do
         expect(@result.description).to match(/American actress, model, and singer/)
       end
     end

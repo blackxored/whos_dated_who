@@ -18,7 +18,7 @@ module WhosDatedWho
           import(result)
         rescue
           first_name, last_name = celeb.split
-          r.table("missing_#{table_name}").insert({first_name: first_name, last_name: last_name}).run(conn)
+          r.table("missing_#{table_name}").insert(first_name: first_name, last_name: last_name).run(conn)
           logger.error("Error importing #{celeb}, added to missing")
         end
       end

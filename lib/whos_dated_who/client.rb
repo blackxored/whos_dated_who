@@ -10,6 +10,7 @@ module WhosDatedWho
     end
 
     private
+
     def normalize(name)
       name.gsub(/\s/, '-').downcase
     end

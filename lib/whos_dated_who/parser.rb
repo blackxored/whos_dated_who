@@ -15,6 +15,7 @@ module WhosDatedWho
     end
 
     private
+
     def extract_bio
       result = {}
       result[:description] = @doc.css('#wikitext').text
@@ -66,11 +67,11 @@ module WhosDatedWho
     end
 
     def parse_height(value)
-      ($1.to_i / 100.0) if value =~ /(\d+) cm.*$/
+      (Regexp.last_match(1).to_i / 100.0) if value =~ /(\d+) cm.*$/
     end
 
     def parse_weight(value)
-      $1.to_f if value =~ /\((.+) kg/
+      Regexp.last_match(1).to_f if value =~ /\((.+) kg/
     end
   end
 end

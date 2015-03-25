@@ -1,9 +1,9 @@
-require "date"
+require 'date'
 
 class Biography < Hashie::Trash
   include Hashie::Extensions::IgnoreUndeclared
 
-  @split_on_comma = ->(i) { i.kind_of?(Array) ? i : i.split(", ") }
+  @split_on_comma = ->(i) { i.is_a?(Array) ? i : i.split(', ') }
 
   property :first_name
   property :middle_name
@@ -35,7 +35,7 @@ class Biography < Hashie::Trash
   property :measurements_inches
   property :dress_size
   property :shoe_size
-  property :websites, from: :official_website #array
+  property :websites, from: :official_website # array
   property :father
   property :mother
   property :brothers # array
