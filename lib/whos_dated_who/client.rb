@@ -8,11 +8,5 @@ module WhosDatedWho
         Parser.new.parse(resp.body)
       end
     end
-
-    private
-
-    def normalize(name)
-      name.gsub(/\s/, '-').downcase
-    end
   end
 end
