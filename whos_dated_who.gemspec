@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'hashie'
   spec.add_dependency 'nokogiri'
   spec.add_dependency 'searchbing'
-  spec.add_dependency 'activesupport', '~> 4'
+  spec.add_dependency 'activesupport', '>= 4'
   spec.add_dependency 'thor'
 
   spec.add_development_dependency 'bundler', '~> 1.6'
