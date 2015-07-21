@@ -65,6 +65,23 @@ module WhosDatedWho
           /American actress, model, and singer/
         )
       end
+
+      it 'parses relationship statuses' do
+        statuses = {
+          'is currently single.'                => :single,
+          'is married to'                       => :married,
+          'is engaged to'                       => :engaged,
+          'is currently dating'                 => :dating,
+          'is in a long-term relationship with' => :dating,
+          'i dunno what this about'             => :unknown
+        }
+
+        statuses.each do |human, status|
+          expect(
+            parser.send(:parse_relationship_status, {human: human})
+          ).to eq(status)
+        end
+      end
     end
   end
 end

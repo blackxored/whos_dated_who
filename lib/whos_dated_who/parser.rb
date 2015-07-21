@@ -6,7 +6,7 @@ module WhosDatedWho
       @doc = Nokogiri::HTML(body)
       extract_bio
       extract_current_relationship
-      extract_past_relationships
+      # TODO: extract_past_relationships
       @result
     end
 
@@ -69,15 +69,12 @@ module WhosDatedWho
       case relationship[:human]
       when /married/ then :married
       when /engaged/ then :engaged
-      when /rumored/ then :rumored
       when /dating/  then :dating
+      when /in a long-term relationship/ then :dating
       when /single/  then :single
       else
         :unknown
       end
-    end
-
-    def extract_past_relationships
     end
 
     def normalize_bio_key(key)
