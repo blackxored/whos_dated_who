@@ -78,7 +78,7 @@ module WhosDatedWho
 
         statuses.each do |human, status|
           expect(
-            parser.send(:parse_relationship_status, {human: human})
+            parser.send(:parse_relationship_status, human: human)
           ).to eq(status)
         end
       end
