@@ -1,6 +1,11 @@
 # WhosDatedWho
 
-[![Gem Version](https://badge.fury.io/rb/whos_dated_who.png)](http://badge.fury.io/rb/whos_dated_who) [![Build Status](https://travis-ci.org/blackxored/whos_dated_who.png)](https://travis-ci.org/blackxored/whos_dated_who) [![Coverage Status](https://coveralls.io/repos/blackxored/whos_dated_who/badge.png?branch=master)](https://coveralls.io/r/blackxored/whos_dated_who) [![Dependency Status](https://gemnasium.com/blackxored/whos_dated_who.png)](https://gemnasium.com/blackxored/whos_dated_who) [![Code Climate](https://codeclimate.com/github/blackxored/whos_dated_who.png)](https://codeclimate.com/github/blackxored/whos_dated_who)
+[![Gem Version](https://img.shields.io/gem/v/whos_dated_who.svg)](http://badge.fury.io/rb/whos_dated_who)
+[![Build Status](https://img.shields.io/travis/blackxored/whos_dated_who.svg)](https://travis-ci.org/blackxored/whos_dated_who)
+[![Coverage Status](https://img.shields.io/coveralls/blackxored/whos_dated_who.svg)](https://coveralls.io/r/blackxored/whos_dated_who)
+[![Dependency Status](https://img.shields.io/gemnasium/blackxored/whos_dated_who.svg)](https://gemnasium.com/blackxored/whos_dated_who)
+[![Code Climate](https://img.shields.io/codeclimate/github/blackxored/whos_dated_who.svg)](https://codeclimate.com/github/blackxored/whos_dated_who)
+[![Downloads](https://img.shields.io/gem/dt/whos_dated_who.svg)](https://rubygems.org/gems/whos_dated_who)
 
 Unofficial API for http://whosdatedwho.com
 
