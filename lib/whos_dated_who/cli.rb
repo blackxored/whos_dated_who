@@ -12,7 +12,7 @@ module WhosDatedWho
     def query(name)
       result = Client.new.fetch(name)
       status = [
-        result[:relationship_status], result[:current_relationship][:human]
+        result[:status], result[:current_relationship][:human]
       ].join(': ')
 
       puts status
