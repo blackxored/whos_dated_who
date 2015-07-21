@@ -237,7 +237,8 @@ Fetch a person:
 ```
 
 This library takes care of cohercion, whether it's primitives or arrays, and
-also provides a fluent method-like interface to the fields.
+also provides a fluent method-like interface to the fields. Height and weight
+are measured in meters and kilograms.
 
 Example:
 
