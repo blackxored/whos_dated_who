@@ -4,6 +4,7 @@ class Biography < Hashie::Trash
   include Hashie::Extensions::IgnoreUndeclared
 
   @split_on_comma = ->(i) { i.is_a?(Array) ? i : i.split(', ') }
+  @parse_date     = ->(i) { Date.parse(i) }
 
   property :first_name
   property :middle_name
@@ -12,7 +13,7 @@ class Biography < Hashie::Trash
   property :full_name_at_birth
   property :other_names # array
   property :age, transform_with: ->(i) { i.to_i }
-  property :born_on, from: :date_of_birth, transform_with: ->(i) { Date.parse(i) }
+  property :born_on, from: :date_of_birth, transform_with: @parse_date
   property :born_at, from: :birthplace
   property :height
   property :weight

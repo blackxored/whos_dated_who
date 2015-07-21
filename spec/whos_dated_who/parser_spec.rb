@@ -3,9 +3,9 @@ require 'spec_helper'
 module WhosDatedWho
   describe Parser do
     let(:parser) { Parser.new }
+
     before do
-      body = File.read(File.expand_path('../../fixtures/scarlett-johansson.resp', __FILE__))
-      parser.parse(body)
+      parser.parse(fixture_response(:scarlett_johansson))
       @result = parser.result.biography
     end
 
@@ -42,7 +42,7 @@ module WhosDatedWho
         [
           :other_names, :brand_endorsements, :websites, :brothers, :sisters,
           :friends, :pets, :favorite_movies, :favorite_places, :favorite_foods,
-          :favorite_colors, :favorite_accessories
+          :favorite_colors, :favorite_accessories, :distinctive_features
         ].each do |key|
           expect(@result[key]).to be_kind_of(Array)
         end
@@ -56,10 +56,14 @@ module WhosDatedWho
         expect(@result.pets.size).to eq(2)
         expect(@result.favorite_movies).to include(/Heat/)
         expect(@result.favorite_places).to include('London')
+        expect(@result.distinctive_features).to include(/Lips/)
+        expect(@result.distinctive_features).to include(/Husky Voice/)
       end
 
       it 'gets a description' do
-        expect(@result.description).to match(/American actress, model, and singer/)
+        expect(@result.description).to match(
+          /American actress, model, and singer/
+        )
       end
     end
   end

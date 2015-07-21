@@ -11,23 +11,24 @@ module WhosDatedWho
     desc 'query', 'Return the relationship status of a celebrity'
     def query(name)
       result = Client.new.fetch(name)
-      puts "#{result[:relationship_status]}: #{result[:current_relationship][:human]}"
+      status = [
+        result[:relationship_status], result[:current_relationship][:human]
+      ].join(': ')
+
+      puts status
       puts result[:current_relationship][:dates].join(', ')
     end
 
-    desc 'explore', 'Return the relationship status of everyone included in celebs.yml'
+    desc 'explore', 'Return the relationship status of everyone in celebs.yml'
     def explore
-      results = []
-      celebs = my_celebs
-      celebs.each do |celeb|
+      my_celebs.map do |celeb|
         puts "Processing #{celeb}..."
         begin
-          results << Client.new.fetch(celeb)
+          Client.new.fetch(celeb)
         rescue
           puts "Error processing #{celeb}"
         end
-      end
-      results
+      end.compact
     end
 
     desc 'import_mine', 'Import my favorites into RethinkDB'
@@ -37,7 +38,8 @@ module WhosDatedWho
 
     desc 'import_maxim', 'Import maxim hot 100'
     def import_maxim
-      resp = Faraday.get('http://www.maxim.com/hot100/2014')
+      # TODO
+      # resp = Faraday.get('http://www.maxim.com/hot100/2014')
     end
 
     private
