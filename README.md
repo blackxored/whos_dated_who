@@ -257,7 +257,7 @@ Example:
 ]
 ```
 
-These examples (and them gem) use
+These examples (and this gem) use
 [awesome_print](https://github.com/michaeldv/awesome_print) for better REPL
 experience.
 
