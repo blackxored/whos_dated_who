@@ -236,17 +236,44 @@ Fetch a person:
       [5] "nndb.com",
 ```
 
-Or get a summary through the command line:
+This library takes care of cohercion, whether it's primitives or arrays, and
+also provides a fluent method-like interface to the fields.
+
+Example:
+
+```ruby
+2.2.2 (main):0 > result = _
+=> ...
+2.2.2 (main):0 > result.status
+=> :married
+2.2.2 (main):0 > result.biography.born_at
+=> "New York City, New York"
+2.2.2 (main):0 > result.biography.born_on
+=> #<Date: 1984-11-22 ((2446027j,0s,0n),+0s,2299161j)>
+2.2.2 (main):0 > result.biography.distinctive_features
+=> [
+  [0] "Her Lips",
+  [1] "Husky Voice"
+]
+```
+
+These examples (and them gem) use
+[awesome_print](https://github.com/michaeldv/awesome_print) for better REPL
+experience.
+
+### CLI
+
+You can also get a summary through the provided command line utility:
 
 ```shell
 $ whos_dated_who query "Scarlett Johansson"
-arried: Scarlett Johansson is married to Romain Dauriac.
+married: Scarlett Johansson is married to Romain Dauriac.
 Commenced Dating: November 2012, Date Engaged: September 2013, Date Married: 1 October 2014
 ```
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/whos_dated_who/fork )
+1. Fork it (https://github.com/blackxored/whos_dated_who/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
