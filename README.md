@@ -7,7 +7,11 @@
 [![Code Climate](https://img.shields.io/codeclimate/github/blackxored/whos_dated_who.svg)](https://codeclimate.com/github/blackxored/whos_dated_who)
 [![Downloads](https://img.shields.io/gem/dt/whos_dated_who.svg)](https://rubygems.org/gems/whos_dated_who)
 
-Unofficial API for http://whosdatedwho.com
+Unofficial API for http://whosdatedwho.com (now http://famousfix.com).
+
+This client provides an unofficial client to the service which allows to discover
+a celebrity's dating status, biography, and more things about their personality
+and likes.
 
 ## Installation
 
@@ -28,63 +32,216 @@ Or install it yourself as:
 Fetch a person:
 
 ```ruby
-2.1.1 (main):0> require 'whos_dated_who'
-=> true
-2.1.1 (main):0> WhosDatedWho::Client.new.fetch('Scarlett Johansson')
-=> {:biography=>
-  {:first_name=>"Scarlett",
-   :middle_name=>"Ingrid",
-   :last_name=>"Johansson",
-   :full_name_at_birth=>"Scarlett Ingrid Johansson",
-   :other_names=>["Scarlett Johanssen", "ScarJo", "Scar"],
-   :age=>29,
-   :born_on=>#<Date: 1984-11-22 ((2446027j,0s,0n),+0s,2299161j)>,
-   :born_at=>"New York, USA",
-   :height=>"5' 3\" (160 cm)",
-   :weight=>"120 lbs (54.4 kg)",
-   :build=>"Voluptuous",
-   :eye_color=>"Green",
-   :hair_color=>"Dyed Blonde",
-   :distinctive_features=>["Bust", "Skin", "Big Lips"],
-   :star_sign=>"Scorpio",
-   :sexuality=>"Straight",
-   :religion=>"Jewish",
-   :ethnicity=>"White",
-   :nationality=>"American",
-   :high_school=>"Professional Children`s School in Manhattan, New York City, New York, USA",
-   :occupation=>"Actress, Model, Singer",
-   :occupation_category=>"Actress",
-   :claim_to_fame=>"Ghost World, Lost in Translation, Match Point, The Black Dahlia",
-   :talent_agency=>"Creative Artist Agency",
-   :brand_endorsements=>
-    ["Gap (2002)", "L'Oreal (2006)", "LVMH (2006)", "Disney Land Disney Park (2007)", "Walt Disney World Disney Park (2007)", "Dolce & Gabbana (2010)"],
-   :measurements_inches=>"36D-25-36",
-   :dress_size=>"6",
-   :shoe_size=>"9",
-   :websites=>["scarlett-fan.com", "scarlettjohansson.org", "scarlett-online.com", "scarlettalbum.com", "scarlett-web.net"],
-   :father=>"Karsten Johansson",
-   :mother=>"Melanie Sloan (manager)",
-   :brothers=>["Hunter Johansson", "Adrian Johansson", "Christian Johansson"],
-   :sisters=>["Vanessa Johansson", "Fenan Sloan Johansson"],
-   :friends=>["Domingo Zapata", "Jeremy Renner", "Clark Gregg", "Sam Claflin"],
-   :pets=>["Trooper (Cat)", "Maggie (Dog - Chihuahua)"],
-   :favorite_movies=>["Heat [1995]"],
-   :favorite_places=>["Paris", "London"],
-   :favorite_foods=>["Fried Rice"],
-   :favorite_colors=>["Blue"],
-   :favorite_accessories=>["D&G Handbags", "Sunglasses"]},
- :status=>:engaged,
- :current_relationship=>
-  {"human"=>"Scarlett Johansson is engaged to Romain Dauriac.", "dates"=>["Commenced Dating: November 2012", "Date Engaged: September 2013"]}}
-~
+
+2.2.2 (main):0 > client = WhosDatedWho::Client.new
+=> #<WhosDatedWho::Client:0x007fd0739ded10>
+2.2.2 (main):0 > client.fetch('Scarlett Johansson')
+=> {
+             "biography" => {
+                     :age => 30,
+                 :born_at => "New York City, New York",
+                 :born_on => #<Date: 1984-11-22 ((2446027j,0s,0n),+0s,2299161j)>,
+      :brand_endorsements => [
+      [ 0] "Gap (2002)",
+      [ 1] "L'Oreal (2006)",
+      [ 2] "LVMH (2006)",
+      [ 3] "Disney Land Disney Park (2007)",
+      [ 4] "Walt Disney World Disney Park (2007)",
+      [ 5] "Dolce & Gabbana (2010)",
+      [ 6] "(2004) Commercial for Calvin Klein fragrance, \"Eternity Moment\"",
+      [ 7] "(2004) Print ad, Estée Lauder.",
+      [ 8] "(2004-07) Print ads for Louis Vuitton.",
+      [ 9] "(2010) Print ads for Moet Champagne.",
+      [10] "(2011) Print ads for Mango fashion line.",
+      [11] "(November 2013) TV commercial, with Matthew McConaughey, for Dolce & Gabbana The One perfume/colognes."
+    ],
+                :brothers => [
+      [0] "Hunter Johansson",
+      [1] "Adrian Johansson",
+      [2] "Christian Johansson"
+    ],
+                   :build => "Athletic",
+           :claim_to_fame => "Ghost World, Lost in Translation, Match Point, The Black Dahlia",
+             :description => "Scarlett Johansson (dʒoʊˈhænsən joh-HAN-sən; born November 22, 1984) is an American actress, model, and singer. She made her film debut in North (1994)
+    :distinctive_features => [
+      [0] "Her Lips",
+      [1] "Husky Voice"
+    ],
+              :dress_size => "6",
+               :ethnicity => "White",
+               :eye_color => "Green",
+                  :father => "Karsten Johansson",
+    :favorite_accessories => [
+      [0] "D&G Handbags",
+      [1] "Sunglasses"
+    ],
+         :favorite_colors => [
+      [0] "Blue"
+    ],
+          :favorite_foods => [
+      [0] "Fried Rice"
+    ],
+         :favorite_movies => [
+      [0] "Heat",
+      [1] " [1995]",
+      [2] "Goodfellas",
+      [3] " [1990]",
+      [4] "Mean Streets",
+      [5] " [1973]"
+    ],
+         :favorite_places => [
+      [0] "Paris",
+      [1] "London"
+    ],
+              :first_name => "Scarlett",
+                 :friends => [
+      [0] "Domingo Zapata",
+      [1] "Jeremy Renner",
+      [2] "Clark Gregg",
+      [3] "Sam Claflin"
+    ],
+      :full_name_at_birth => "Scarlett Ingrid Johansson",
+              :hair_color => "Dyed Blonde",
+                  :height => 1.6,
+             :high_school => "Professional Children`s School in Manhattan, New York City, New York, USA",
+               :last_name => "Johansson",
+     :measurements_inches => "32C-25-36",
+             :middle_name => "Ingrid",
+                  :mother => "Melanie Sloan (manager)",
+             :nationality => "American",
+              :occupation => "Actress, Model, Singer, and Director",
+     :occupation_category => "Actress",
+             :other_names => [
+      [0] "Scar",
+      [1] "ScarJo"
+    ],
+                    :pets => [
+      [0] "Trooper (Cat)",
+      [1] "Maggie (Dog - Chihuahua)"
+    ],
+                :religion => "Jewish",
+               :sexuality => "Straight",
+               :shoe_size => "9.5",
+                 :sisters => [
+      [0] "Vanessa Johansson",
+      [1] "Fenan Sloan Johansson"
+    ],
+               :star_sign => "Scorpio",
+           :talent_agency => [
+      [0] "Creative Artist Agency",
+      [1] "Bailey Brand Management, Inc."
+    ],
+    ],
+=> {
+             "biography" => {
+                     :age => 30,
+                 :born_at => "New York City, New York",
+                 :born_on => #<Date: 1984-11-22 ((2446027j,0s,0n),+0s,2299161j)>,
+      :brand_endorsements => [
+      [ 0] "Gap (2002)",
+      [ 1] "L'Oreal (2006)",
+      [ 2] "LVMH (2006)",
+      [ 3] "Disney Land Disney Park (2007)",
+      [ 4] "Walt Disney World Disney Park (2007)",
+      [ 5] "Dolce & Gabbana (2010)",
+      [ 6] "(2004) Commercial for Calvin Klein fragrance, \"Eternity Moment\"",
+      [ 7] "(2004) Print ad, Estée Lauder.",
+      [ 8] "(2004-07) Print ads for Louis Vuitton.",
+      [ 9] "(2010) Print ads for Moet Champagne.",
+      [10] "(2011) Print ads for Mango fashion line.",
+      [11] "(November 2013) TV commercial, with Matthew McConaughey, for Dolce & Gabbana The One perfume/colognes."
+    ],
+                :brothers => [
+      [0] "Hunter Johansson",
+      [1] "Adrian Johansson",
+      [2] "Christian Johansson"
+    ],
+                   :build => "Athletic",
+           :claim_to_fame => "Ghost World, Lost in Translation, Match Point, The Black Dahlia",
+             :description => "Scarlett Johansson (dʒoʊˈhænsən joh-HAN-sən; born November 22, 1984) is an American actress, model, and singer. She made her film debut in North (1994)
+    :distinctive_features => [
+      [0] "Her Lips",
+      [1] "Husky Voice"
+    ],
+              :dress_size => "6",
+               :ethnicity => "White",
+               :eye_color => "Green",
+                  :father => "Karsten Johansson",
+    :favorite_accessories => [
+      [0] "D&G Handbags",
+      [1] "Sunglasses"
+    ],
+         :favorite_colors => [
+      [0] "Blue"
+    ],
+          :favorite_foods => [
+      [0] "Fried Rice"
+    ],
+         :favorite_movies => [
+      [0] "Heat",
+      [1] " [1995]",
+      [2] "Goodfellas",
+      [3] " [1990]",
+      [4] "Mean Streets",
+      [5] " [1973]"
+    ],
+         :favorite_places => [
+      [0] "Paris",
+      [1] "London"
+    ],
+              :first_name => "Scarlett",
+                 :friends => [
+      [0] "Domingo Zapata",
+      [1] "Jeremy Renner",
+      [2] "Clark Gregg",
+      [3] "Sam Claflin"
+    ],
+      :full_name_at_birth => "Scarlett Ingrid Johansson",
+              :hair_color => "Dyed Blonde",
+                  :height => 1.6,
+             :high_school => "Professional Children`s School in Manhattan, New York City, New York, USA",
+               :last_name => "Johansson",
+     :measurements_inches => "32C-25-36",
+             :middle_name => "Ingrid",
+                  :mother => "Melanie Sloan (manager)",
+             :nationality => "American",
+              :occupation => "Actress, Model, Singer, and Director",
+     :occupation_category => "Actress",
+             :other_names => [
+      [0] "Scar",
+      [1] "ScarJo"
+    ],
+                    :pets => [
+      [0] "Trooper (Cat)",
+      [1] "Maggie (Dog - Chihuahua)"
+    ],
+                :religion => "Jewish",
+               :sexuality => "Straight",
+               :shoe_size => "9.5",
+                 :sisters => [
+      [0] "Vanessa Johansson",
+      [1] "Fenan Sloan Johansson"
+    ],
+               :star_sign => "Scorpio",
+           :talent_agency => [
+      [0] "Creative Artist Agency",
+      [1] "Bailey Brand Management, Inc."
+    ],
+                :websites => [
+      [0] "scarlett-fan.com",
+      [1] "scarlettjohansson.org",
+      [2] "scarlett-online.com",
+      [3] "scarlettalbum.com",
+      [4] "scarlett-web.net",
+      [5] "nndb.com",
 ```
 
 Or get a summary through the command line:
 
 ```shell
 $ whos_dated_who query "Scarlett Johansson"
-engaged: Scarlett Johansson is engaged to Romain Dauriac.
-Commenced Dating: November 2012, Date Engaged: September 2013
+arried: Scarlett Johansson is married to Romain Dauriac.
+Commenced Dating: November 2012, Date Engaged: September 2013, Date Married: 1 October 2014
 ```
 
 ## Contributing
