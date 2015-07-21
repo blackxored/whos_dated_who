@@ -5,6 +5,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/blackxored/whos_dated_who.svg)](https://coveralls.io/r/blackxored/whos_dated_who)
 [![Dependency Status](https://img.shields.io/gemnasium/blackxored/whos_dated_who.svg)](https://gemnasium.com/blackxored/whos_dated_who)
 [![Code Climate](https://img.shields.io/codeclimate/github/blackxored/whos_dated_who.svg)](https://codeclimate.com/github/blackxored/whos_dated_who)
+[![License](https://img.shields.io/github/license/blackxored/whos_dated_who.svg)](http://www.opensource.org/licenses/MIT)
 [![Downloads](https://img.shields.io/gem/dt/whos_dated_who.svg)](https://rubygems.org/gems/whos_dated_who)
 
 Unofficial API for http://whosdatedwho.com (now http://famousfix.com).
