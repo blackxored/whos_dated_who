@@ -5,3 +5,4 @@ rvm:
 env:
   global:
     secure: LajEHfUoZ43iJI3DWRWNyWRumb73A4fCMJyTxP3chHoA7Rbh6Baie1vuQVDCbt4TiOMlZVhP7d21JonsvsFyfagKdTTNyUM1m9pNXWX1z/mIV51/TtOgpx2o8eNExI2SB4LqOrLDZ/UFvdl9xIrgmUQgRjcjqfq5MmNHLO1N/co=
+sudo: false
