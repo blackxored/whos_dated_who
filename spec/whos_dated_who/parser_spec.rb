@@ -12,8 +12,7 @@ module WhosDatedWho
     context 'biography' do
       it 'parses the HTML and returns a result hash' do
         expect(@result.first_name).to eq('Scarlett')
-        expect(@result.last_name).to eq('Dauriac')
-        expect(@result.maiden_name).to eq('Johansson')
+        expect(@result.last_name).to eq('Johansson')
       end
 
       it 'translates keys' do
@@ -52,7 +51,7 @@ module WhosDatedWho
         expect(@result.websites).to include(/scarlett-fan\.com/)
         expect(@result.brothers).to include(/Hunter Johansson/)
         expect(@result.sisters.size).to eq(2)
-        expect(@result.friends.size).to eq(4)
+        expect(@result.friends.size).to eq(5)
         expect(@result.pets.size).to eq(2)
         expect(@result.favorite_movies).to include(/Heat/)
         expect(@result.favorite_places).to include('London')

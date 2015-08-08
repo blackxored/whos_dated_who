@@ -10,6 +10,7 @@ SimpleCov.start do
 end
 
 require 'pry'
+require 'rspec'
 require 'whos_dated_who'
 
 Dir[File.expand_path('..', __FILE__) + '/support/**/*.rb'].each do |f|

@@ -17,7 +17,15 @@ module WhosDatedWho
     private
 
     def extract_bio
-      result = parse_bio(@doc.css('#rcol .cbox-nopad:nth-child(3)'))
+      bio_selector = '#rcol .cbox-nopad:nth-child(3)'
+      bio = @doc.css(bio_selector)
+
+      # if it's biography section, skip it
+      if bio.css('#wikitext').size > 0
+        bio = @doc.css(bio_selector.sub('3', '4'))
+      end
+
+      result = parse_bio(bio)
       result[:description] = @doc.css('#wikitext').text
 
       @biography = Biography.new(result.symbolize_keys)

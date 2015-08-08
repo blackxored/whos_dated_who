@@ -11,11 +11,11 @@ describe WhosDatedWho do
       expect(result.biography.last_name).to eq('Swanepoel')
       expect(result.biography.age).to eq(26)
 
-      result = client.fetch('Katheryn Winnick')
-      expect(result.status).to eq(:unknown)
-      expect(result.biography.first_name).to eq('Katheryn')
-      expect(result.biography.last_name).to eq('Winnick')
-      expect(result.biography.age).to eq(37)
+      result = client.fetch('Jennifer Lawrence')
+      expect(result.status).to eq(:single)
+      expect(result.biography.first_name).to eq('Jennifer')
+      expect(result.biography.last_name).to eq('Lawrence')
+      expect(result.biography.age).to eq(24)
     end
   end
 end

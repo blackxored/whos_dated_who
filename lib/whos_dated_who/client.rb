@@ -5,7 +5,9 @@ module WhosDatedWho
       url = bing_results.first[:Web].first[:Url]
       resp = Faraday.get(url)
 
-      resp.success? && Parser.new.parse(resp.body)
+      if resp.success?
+        Parser.new.parse(resp.body)
+      end
     end
   end
 end
