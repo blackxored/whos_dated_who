@@ -17,7 +17,7 @@ module WhosDatedWho
     private
 
     def extract_bio
-      bio_selector = '#rcol .cbox-nopad:nth-child(3)'
+      bio_selector = '#rcol .cbox:nth-child(3)'
       bio = @doc.css(bio_selector)
 
       # if it's biography section, skip it
@@ -35,7 +35,7 @@ module WhosDatedWho
       current = @doc.css('.pbox.datebox')
       relationship = {}
 
-      relationship[:human] = current.css('div.padb10:first').text
+      relationship[:human] = current.css('div.pb10:first').text
       relationship[:dates] = current.css('ul li').map(&:content)
       result[:current_relationship] = relationship
 
